@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: minimal-wiki-render
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: NAMU_HOST
+        value: 0.0.0.0
+      - key: NAMU_PORT
+        value: 5000
+      - key: NAMU_DEBUG
+        value: "0"
